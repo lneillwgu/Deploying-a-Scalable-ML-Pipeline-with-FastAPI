@@ -13,14 +13,14 @@ from ml.model import (
     train_model,
 )
 # TODO: load the census.csv data
-project_path = "https://github.com/lneillwgu/Deploying-a-Scalable-ML-Pipeline-with-FastAPI.git"
+project_path = "../data/census.csv"
 data_path = os.path.join(project_path, "data", "census.csv")
 print(data_path)
-data = pd.read_csv('census.csv')
+data = pd.read_csv(project_path)
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
-train, test = train_test_split(X,y, test_size= 0.25)
+train, test = train_test_split(X,y, test_size= 0.25, #random_state?)
 
 # DO NOT MODIFY
 cat_features = [
@@ -66,7 +66,8 @@ model = load_model(
 ) 
 
 # TODO: use the inference function to run the model inferences on the test dataset.
-preds = model.predict(X_test)
+#revisit this,  doesn't look right
+preds = inference(model, X)
 
 # Calculate and print the metrics
 p, r, fb = compute_model_metrics(y_test, preds)
