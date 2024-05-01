@@ -12,7 +12,7 @@ from ml.model import (
     save_model,
     train_model,
 )
-# TODO: load the cencus.csv data
+# TODO: load the census.csv data
 project_path = "https://github.com/lneillwgu/Deploying-a-Scalable-ML-Pipeline-with-FastAPI.git"
 data_path = os.path.join(project_path, "data", "census.csv")
 print(data_path)
@@ -52,7 +52,7 @@ X_test, y_test, _, _ = process_data(
 )
 
 # TODO: use the train_model function to train the model on the training dataset
-model = # your code here
+model = train_model(X_train, y_train)
 
 # save the model and the encoder
 model_path = os.path.join(project_path, "model", "model.pkl")
@@ -66,7 +66,7 @@ model = load_model(
 ) 
 
 # TODO: use the inference function to run the model inferences on the test dataset.
-preds = # your code here
+preds = model.predict(X_test)
 
 # Calculate and print the metrics
 p, r, fb = compute_model_metrics(y_test, preds)
