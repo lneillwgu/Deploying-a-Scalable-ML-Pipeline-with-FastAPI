@@ -13,14 +13,14 @@ from ml.model import (
     train_model,
 )
 # TODO: load the cencus.csv data
-project_path = "Your path here"
+project_path = "https://github.com/lneillwgu/Deploying-a-Scalable-ML-Pipeline-with-FastAPI.git"
 data_path = os.path.join(project_path, "data", "census.csv")
 print(data_path)
-data = # your code here
+data = pd.read_csv('census.csv')
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
-train, test = # Your code here
+train, test = train_test_split(X,y, test_size= 0.25)
 
 # DO NOT MODIFY
 cat_features = [
@@ -36,10 +36,10 @@ cat_features = [
 
 # TODO: use the process_data function provided to process the data.
 X_train, y_train, encoder, lb = process_data(
-    # your code here
-    # use the train dataset 
-    # use training=True
-    # do not need to pass encoder and lb as input
+    train,
+    categorical_features=cat_features,
+    label="salary",
+    training=True,
     )
 
 X_test, y_test, _, _ = process_data(
