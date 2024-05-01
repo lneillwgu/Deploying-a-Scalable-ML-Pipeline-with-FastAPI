@@ -13,14 +13,14 @@ from ml.model import (
     train_model,
 )
 # TODO: load the census.csv data
-project_path = "../data/census.csv"
+project_path = "/"
 data_path = os.path.join(project_path, "data", "census.csv")
 print(data_path)
-data = pd.read_csv(project_path)
+data = pd.read_csv(data_path)
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
-train, test = train_test_split(X,y, test_size= 0.25, #random_state?)
+train, test = train_test_split(X,y, test_size= 0.25, random_state=42)
 
 # DO NOT MODIFY
 cat_features = [
@@ -34,7 +34,7 @@ cat_features = [
     "native-country",
 ]
 
-# TODO: use the process_data function provided to process the data.
+#TODO: use the process_data function provided to process the data.
 X_train, y_train, encoder, lb = process_data(
     train,
     categorical_features=cat_features,
