@@ -13,14 +13,14 @@ from ml.model import (
     train_model,
 )
 # TODO: load the census.csv data
-project_path = "/"
+project_path = os.getcwd()
 data_path = os.path.join(project_path, "data", "census.csv")
 print(data_path)
 data = pd.read_csv(data_path)
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
-train, test = train_test_split(X,y, test_size= 0.25, random_state=42)
+train, test = train_test_split(data, test_size= 0.25, random_state=42)
 
 # DO NOT MODIFY
 cat_features = [
@@ -67,7 +67,7 @@ model = load_model(
 
 # TODO: use the inference function to run the model inferences on the test dataset.
 #revisit this,  doesn't look right
-preds = inference(model, X)
+preds = inference(model, X_test)
 
 # Calculate and print the metrics
 p, r, fb = compute_model_metrics(y_test, preds)
@@ -80,9 +80,14 @@ for col in cat_features:
     for slicevalue in sorted(test[col].unique()):
         count = test[test[col] == slicevalue].shape[0]
         p, r, fb = performance_on_categorical_slice(
-            test,
-            col,
-            slicevalue
+            data=test,
+            column_name=col,
+            slice_value=slicevalue,
+            categorical_features=cat_features,
+            label='salary',
+            encoder=encoder,
+            lb=lb,
+            model=model
             # your code here
             # use test, col and slicevalue as part of the input
         )
