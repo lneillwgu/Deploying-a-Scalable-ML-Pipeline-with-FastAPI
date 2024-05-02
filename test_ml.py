@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.model import (train_model,compute_model_metrics)
+from ml.data import apply_label
 # TODO: add necessary import
 
 # TODO: implement the first test. Change the function name and input as needed
@@ -24,12 +25,12 @@ def test_data_size(data):
 
 
 # TODO: implement the second test. Change the function name and input as needed
-def test_model():
+def test_():
     """
-    # add description for the third test
+    # Testing the 
     """
-    # Your code here
     pass
+
     
 
 
