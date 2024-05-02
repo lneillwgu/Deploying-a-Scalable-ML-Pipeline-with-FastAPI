@@ -66,7 +66,7 @@ model = load_model(
 ) 
 
 # TODO: use the inference function to run the model inferences on the test dataset.
-#revisit this,  doesn't look right
+
 preds = inference(model, X_test)
 
 # Calculate and print the metrics
