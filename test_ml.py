@@ -48,13 +48,15 @@ def test_model_type(data):
     assert isinstance(model, AdaBoostClassifier)
     
 
-    
-
 
 # TODO: implement the third test. Change the function name and input as needed
-def test_three():
+def test_three(data):
     """
     # add description for the third test
     """
     # Your code here
-    pass
+    train, test = train_test_split(data, test_size= 0.25, random_state=42)
+    assert train.shape[0]>750,('Training Data has greater than 750 entries')
+    assert test.shape[0]>250,('Testing Data has greater than 250 entries')
+
+ 
