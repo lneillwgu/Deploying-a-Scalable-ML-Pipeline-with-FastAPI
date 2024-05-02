@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.model import (train_model,compute_model_metrics)
-from ml.data import apply_label
+from ml.data import (apply_label,process_data)
 # TODO: add necessary import
 
 # TODO: implement the first test. Change the function name and input as needed
@@ -25,11 +25,28 @@ def test_data_size(data):
 
 
 # TODO: implement the second test. Change the function name and input as needed
-def test_():
+def test_model_type(data):
     """
-    # Testing the 
+    # Testing the model type
     """
-    pass
+    cat_features = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
+    X, y, _, _ = process_data(
+    data,
+    categorical_features=cat_features,
+    label="salary"
+)
+    model=train_model(X,y)
+    assert isinstance(model, AdaBoostClassifier)
+    
 
     
 
