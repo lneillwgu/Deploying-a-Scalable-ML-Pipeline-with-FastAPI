@@ -35,7 +35,7 @@ def test_data_size(data):
     """
     This test checks that the size of the data is > 1000 entries.
     """
-    assert data.shape[0] > 1000, f'Data has greater than 1000 entries'
+    assert data.shape[0] > 1000, f'{"Data has greater than 1000 entries"}'
 
 
 # TODO: implement the second test. Change the function name and input as needed
