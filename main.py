@@ -41,7 +41,7 @@ app = FastAPI()
 async def get_root():
     """ Say hello!"""
     # your code here
-    return {"Hello!": "Welcome to the API"}
+    return {"message": "Hello! Welcome to the API!"}
     
 
 
