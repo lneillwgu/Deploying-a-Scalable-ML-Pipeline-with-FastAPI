@@ -1,1 +1,12 @@
+# ignore ALL .log files
+*.log
 
+# ignore ALL files in ANY directory named temp
+temp/
+
+readme.md
+
+data/ignorethis
+.github/workflows/ignore
+.github/workflows/ignoreme
+.github/workflows/manual.yml
