@@ -4,8 +4,6 @@
 # ignore ALL files in ANY directory named temp
 temp/
 
-readme.md
-
 data/ignorethis
 .github/workflows/ignore
 .github/workflows/ignoreme
