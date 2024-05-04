@@ -8,5 +8,3 @@ data/ignorethis
 .github/workflows/ignore
 .github/workflows/ignoreme
 .github/workflows/manual.yml
-
-/lib/**
