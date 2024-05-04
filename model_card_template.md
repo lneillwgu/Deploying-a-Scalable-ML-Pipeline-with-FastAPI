@@ -2,7 +2,7 @@
 
 
 ## Model Details
-This is developed by Lindsey Neill for Udacity ML DevOps course, completed on May 3rd, 2024.  This model uses the AdaBoostClassifier
+This is developed by Lindsey Neill for Udacity ML DevOps course, completed on May 3rd, 2024.  This model uses the AdaBoostClassifier.
 
 ## Intended Use
 The intended use of this model is for the prediction of salary category of less than or equal to $50k per year or greater than $50k per year.  This prediction allows a charity to predict potential donors. 
