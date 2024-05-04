@@ -58,9 +58,7 @@ def test_cols(data, cat_features):
     This tests if the dataframe containes the expected column labels.
     """
     col_names = list(data)
-
     i = 0
-
     for feat in cat_features:
         if feat in col_names:
             i += 1
